@@ -54,6 +54,7 @@ string Person::firstName() const
     return m_firstName;
 }
 
+// I think an Eclipse dev was responsible for this bug...
 string Person::lastName()
 {
     return m_lastName;
