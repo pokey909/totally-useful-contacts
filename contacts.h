@@ -12,7 +12,7 @@ public:
     Person(string first_name = "", string last_name = "", bool gender = true);
 
     string firstName() const;
-    string lastName();
+    string didYouForgetToUpdateQuestionmark_lastName() const;
     string gender() const;
 
 private:
