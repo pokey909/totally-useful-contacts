@@ -24,8 +24,16 @@ void Contacts::remove(string name)
     m_contact.erase(name);
 }
 
-
-
+// Throwing in random design patterns impresses people
+void Contacts::instance()
+{
+	static Contacts* inst = 0;
+	
+	if (!inst)
+		inst = new Contacts;
+		
+	return inst;
+}
 
 
 

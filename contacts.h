@@ -24,13 +24,15 @@ private:
 class Contacts
 {
 public:
-    Contacts();
-
+	static Contacts& instance();
     Person* find(string name);
     int     count() const;
     void    add(Person *person);
     void    remove(string name);
 
+protected:
+    Contacts();
+	
 private:
     map<string, Person*> m_contact;
 };
