@@ -30,7 +30,6 @@ public:
     void    add(Person *person);
     void    remove(string name);
 
-protected:
     Contacts();
 	
 private:
