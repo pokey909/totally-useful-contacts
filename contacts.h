@@ -12,7 +12,7 @@ public:
     Person(string first_name = "", string last_name = "", bool gender = true);
 
     string firstName() const;
-    string didYouForgetToUpdateQuestionmark_lastName() const;
+    string lastName() const;
     string gender() const;
 
 private:
@@ -24,8 +24,8 @@ private:
 class Contacts
 {
 public:
-	static Contacts& instance();
-    Person* find(string name);
+	//static Contacts& instance();
+    bool find(string name, Person*& person);
     int     count() const;
     void    add(Person *person);
     void    remove(string name);

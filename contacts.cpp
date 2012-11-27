@@ -4,9 +4,10 @@ Contacts::Contacts()
 {
 }
 
-Person *Contacts::find(string name)
+bool Contacts::find(string name, Person*& person)
 {
-    return m_contact[name];
+    person = m_contact[name];
+    return (person != NULL);
 }
 
 int Contacts::count() const
@@ -24,16 +25,16 @@ void Contacts::remove(string name)
     m_contact.erase(name);
 }
 
-// Throwing in random design patterns impresses people
-void Contacts::instance()
-{
-	static Contacts* inst = 0;
+// // Throwing in random design patterns impresses people
+// Contacts& Contacts::instance()
+// {
+// 	static Contacts* inst = 0;
 	
-	if (!inst)
-		inst = new Contacts;
+// 	if (!inst)
+// 		inst = new Contacts;
 		
-	return inst;
-}
+// 	return inst;
+// }
 
 
 
@@ -54,8 +55,7 @@ string Person::firstName() const
     return m_firstName;
 }
 
-// I think an Eclipse dev was responsible for this bug...
-string Person::lastName()
+string Person::lastName() const
 {
     return m_lastName;
 }
